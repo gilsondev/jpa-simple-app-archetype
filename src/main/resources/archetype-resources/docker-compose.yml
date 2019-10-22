@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    container_name: "postgres_jpa"
+    environment:
+      - POSTGRES_DB=jpa_practice
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - TZ=GMT
+    volumes:
+      - "./data/postgres:/var/lib/postgresql/data"
+    ports:
+      - 5432:5432
